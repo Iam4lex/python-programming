@@ -9,7 +9,8 @@
 :root {
   --color-default: #222222;
   --color-primary: #ffffff;
-  --color-secondary: #f85a40;
+  --color-secondary: orange;
+  --color-blue: rgb(10, 10, 88);
 }
 
 /* Smooth scroll behavior */
@@ -281,7 +282,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
 }
 
 .header.sticked {
@@ -349,7 +350,7 @@ section {
     font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-primary);
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
@@ -369,7 +370,7 @@ section {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: var(--color-secondary);
+    background-color: var(--color-blue);
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -1870,11 +1871,11 @@ section {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--color-default);
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.6);
+  color: #8d8c8c;
   font-weight: 400;
   margin-bottom: 30px;
 }
