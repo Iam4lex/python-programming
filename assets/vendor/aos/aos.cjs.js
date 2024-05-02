@@ -141,7 +141,6 @@ var Detector = function () {
       return this.mobile() && !this.phone();
     }
 
-    // http://browserhacks.com/#hack-acea075d0ac6954f275a70023906050c
 
   }, {
     key: 'ie11',
@@ -250,13 +249,7 @@ var handleScroll = function handleScroll($elements) {
   });
 };
 
-/**
- * Get offset of DOM element
- * like there were no transforms applied on it
- *
- * @param  {Node} el [DOM element]
- * @return {Object} [top and left offset]
- */
+
 var offset = function offset(el) {
   var _x = 0;
   var _y = 0;

@@ -11,6 +11,18 @@
   --color-primary: #ffffff;
   --color-secondary: orange;
   --color-blue: rgb(10, 10, 88);
+  --color-gray: #8583831a;
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
 }
 
 /* Smooth scroll behavior */
@@ -1871,11 +1883,11 @@ section {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--color-default);
+  color: var(--color-blue);
 }
 
 .hero p {
-  color: #8d8c8c;
+  color: #686363;
   font-weight: 400;
   margin-bottom: 30px;
 }
@@ -1889,9 +1901,8 @@ section {
   padding: 14px 40px;
   border-radius: 50px;
   transition: 0.3s;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  color: var(--color-blue);
+  background: #8583831a;
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1903,12 +1914,15 @@ section {
   font-size: 16px;
   transition: 0.5s;
   margin-left: 25px;
-  color: #fff;
-  font-weight: 600;
+  color: var(--color-blue);
+  font-weight: 400;
+  background: #8583831a;
+  padding: 10px 20px;
+  border-radius: 50px;
 }
 
 .hero .btn-watch-video i {
-  color: rgba(255, 255, 255, 0.5);
+  color: #858383;
   font-size: 32px;
   transition: 0.3s;
   line-height: 0;
@@ -1916,7 +1930,7 @@ section {
 }
 
 .hero .btn-watch-video:hover i {
-  color: #fff;
+  color: var(--color-blue);
 }
 
 @media (max-width: 640px) {
@@ -1950,8 +1964,8 @@ section {
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: #008d7d;
-  box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
+  background: var(--color-blue);
+  /* box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08); */
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
@@ -1967,7 +1981,7 @@ section {
 }
 
 .hero .icon-box .title a {
-  color: #fff;
+  color: var(--color-primary);
   transition: 0.3s;
 }
 
@@ -1982,7 +1996,7 @@ section {
 }
 
 .hero .icon-box:hover {
-  background: #009786;
+  background: #070e77;
 }
 
 .hero .icon-box:hover .title a,
