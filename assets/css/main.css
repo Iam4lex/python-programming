@@ -23,6 +23,9 @@
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-black: #000;
+  --bg--color: #141b27;
+  --span--color: #3b434a;
+  --box-color: #1c2330;
 }
 
 /* Smooth scroll behavior */
@@ -361,7 +364,7 @@ section {
     padding: 0 3px;
     font-family: var(--font-secondary);
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--color-primary);
     white-space: nowrap;
     transition: 0.3s;
@@ -786,7 +789,7 @@ section {
   font-size: 40px;
   display: block;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   line-height: 40px;
 }
 
@@ -921,11 +924,13 @@ section {
 --------------------------------------------------------------*/
 .services {
   padding: 60px 0;
+  background: var(--bg--color);
+  color: #fff;
 }
 
 .services .service-item {
   padding: 40px;
-  background: #fff;
+  background: var(--box-color);
   height: 100%;
   border-radius: 10px;
 }
@@ -938,7 +943,7 @@ section {
 }
 
 .services .service-item .icon i {
-  color: var(--color-default);
+  color: var(--color-primary);
   font-size: 56px;
   transition: ease-in-out 0.3s;
   z-index: 2;
@@ -950,7 +955,7 @@ section {
   content: "";
   height: 100%;
   width: 100%;
-  background: #eeeeee;
+  background: var(--bg--color);
   border-radius: 50px;
   z-index: 1;
   top: 10px;
@@ -983,7 +988,7 @@ section {
 }
 
 .services .service-item:hover .icon:before {
-  background: #00b6a1;
+  background: var(--bs-orange);
 }
 
 .services .service-item:hover h3 {
