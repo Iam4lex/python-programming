@@ -798,7 +798,7 @@ section {
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action .container {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cta-bg.jpg") center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/star\ g2.gif") center center;
   background-size: cover;
   padding: 100px 60px;
   border-radius: 15px;
@@ -1348,6 +1348,10 @@ section {
   color: var(--color-primary);
 }
 
+.contact .section-header p{
+  color: var(--color-primary);
+}
+
 .contact .info-box {
   color: var(--text-color);
   text-align: center;
@@ -1472,16 +1476,16 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: var(--secondary-color);
+  background: var(--bs-orange);
   border: 0;
   padding: 10px 24px;
-  color: var(--dark-color);
+  color: var(--color-primary);
   transition: 0.4s;
   border-radius: 5px;
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: var(--secondary-color);
+  background: rgb(247, 89, 31);
 }
 
 @keyframes animate-loading {
@@ -1498,9 +1502,9 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: url("../img/My\ Photo.jpeg") top center no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url(/assets/img/footer\ bg.jpg) top center no-repeat;
   background-size: cover;
-  color: var(--primary-color);
+  color: var(--color-primary);
   font-size: 14px;
   text-align: center;
   padding: 80px 0;
@@ -1514,7 +1518,7 @@ section {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 #footer .container {
@@ -1524,7 +1528,7 @@ section {
 #footer h3 {
   font-size: 36px;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--color-primary);
   position: relative;
   font-family: "Satisfy", serif;
   padding: 0;
@@ -1545,7 +1549,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: var(--sky-blue);
+  background: var(--bs-blue);
   color: var(--primary-color);
   line-height: 1;
   padding: 8px 0;
@@ -1558,7 +1562,7 @@ section {
 }
 
 #footer .social-links a:hover {
-  background: var(--secondary-color);
+  background: var(--bs-orange);
   color: var(--primary-color);
   text-decoration: none;
 }
@@ -1569,4 +1573,8 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+#footer .credits a{
+  color: var(--bs-orange);
 }
