@@ -1258,10 +1258,10 @@ section {
 
 .hero .btn-watch-video i {
   color: #858383;
-  font-size: 32px;
+  font-size: 25px;
   transition: 0.3s;
   line-height: 0;
-  margin-right: 8px;
+  margin-left: 8px;
 }
 
 .hero .btn-watch-video:hover i {
