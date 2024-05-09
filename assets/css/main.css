@@ -805,7 +805,7 @@ section {
 --------------------------------------------------------------*/
 .services {
   padding: 60px 0;
-  background: linear-gradient(#1b91c4de,#1b91c4e7), url(/assets/img/blog/blog-4.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(/assets/img/bg\ image.jpeg) no-repeat;
   background-position: center;
   background-size: cover;
   color: #fff;
