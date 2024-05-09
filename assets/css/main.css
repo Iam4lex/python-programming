@@ -243,61 +243,11 @@ section {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-.topbar {
-  background: #00796b;
-  height: 40px;
-  font-size: 14px;
-  transition: all 0.5s;
-  color: #fff;
-  padding: 0;
-}
-
-.topbar .contact-info i {
-  font-style: normal;
-  color: #fff;
-  line-height: 0;
-}
-
-.topbar .contact-info i a,
-.topbar .contact-info i span {
-  padding-left: 5px;
-  color: #fff;
-}
-
-@media (max-width: 575px) {
-
-  .topbar .contact-info i a,
-  .topbar .contact-info i span {
-    font-size: 13px;
-  }
-}
-
-.topbar .contact-info i a {
-  line-height: 0;
-  transition: 0.3s;
-}
-
-.topbar .contact-info i a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.topbar .social-links a {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 0;
-  transition: 0.3s;
-  margin-left: 20px;
-}
-
-.topbar .social-links a:hover {
-  color: #fff;
-}
-
 .header {
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  background-color: #006459;
+  background-color: #1B91C4;
 }
 
 .header.sticked {
@@ -855,7 +805,7 @@ section {
 --------------------------------------------------------------*/
 .services {
   padding: 60px 0;
-  background: #006459;
+  background: linear-gradient(#1b91c4de,#1b91c4e7), url(/assets/img/blog/blog-4.jpg);
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -1299,7 +1249,7 @@ section {
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: #006459;
+  background: #1B91C4;
   /* box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08); */
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -1344,7 +1294,7 @@ section {
 # Contact Me
 --------------------------------------------------------------*/
 #contact{
-  background: #006459;
+  background: #1B91C4;
   color: var(--color-primary);
 }
 
