@@ -175,7 +175,7 @@ section {
   background: var(--color-secondary);
   width: 44px;
   height: 44px;
-  border-radius: 50px;
+  border-radius: 4px;
   transition: all 0.4s;
 }
 
@@ -596,60 +596,27 @@ section {
   margin-bottom: 0;
 }
 
-.about .play-btn:before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  animation-delay: 0s;
-  animation: pulsate-btn 2s;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(0, 131, 116, 0.7);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
+.about .readmore{
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 14px 40px;
+  border-radius: 50px;
+  transition: 0.3s;
+  color: var(--color-primary);
+  background: #0d6efd;
+  border: 2px solid #0d6efd;
+  margin: 10px 0 0 40px;
 }
 
-.about .play-btn:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+.about .readmore:hover{
+  background: #1153b6ef;
+  border: 2px solid #1153b6ef;
 }
 
-.about .play-btn:hover:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  animation: none;
-  border-radius: 0;
-}
 
-.about .play-btn:hover:after {
-  border-left: 15px solid var(--color-primary);
-  transform: scale(20);
-}
 
 @keyframes pulsate-btn {
   0% {
@@ -805,7 +772,7 @@ section {
 --------------------------------------------------------------*/
 .services {
   padding: 60px 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(/assets/img/bg\ image.jpeg) no-repeat;
+  background: linear-gradient(rgba(22, 138, 192, 0.764),rgba(22, 138, 192, 0.764)), url(/assets/img/sta.jpeg) no-repeat;
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -846,7 +813,7 @@ section {
   content: "";
   height: 100%;
   width: 100%;
-  background: #009d8b;
+  background: #0d6efd;
   border-radius: 50px;
   z-index: 1;
   top: 10px;
@@ -897,10 +864,11 @@ section {
   box-sizing: content-box;
   padding: 30px;
   margin: 30px 10px;
-  box-shadow: 0px 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 15px rgba(10, 145, 255, 0.5);
   position: relative;
-  background: #fff;
+  background: #1B91C4;
   border-radius: 10px;
+  height: 300px;
 }
 
 .testimonials .testimonial-item .testimonial-img {
@@ -913,12 +881,12 @@ section {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0 5px 0;
-  color: #000;
+  color: var(--color-primary);
 }
 
 .testimonials .testimonial-item h4 {
   font-size: 14px;
-  color: #999;
+  color: var(--color-blue);
   margin: 0;
 }
 
@@ -933,7 +901,7 @@ section {
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #009d8b;
+  color: var(--color-primary);
   font-size: 26px;
   line-height: 0;
 }
@@ -955,6 +923,7 @@ section {
 .testimonials .testimonial-item p {
   font-style: italic;
   margin: 15px auto 15px auto;
+  color: var(--color-primary);
 }
 
 .testimonials .swiper-pagination {
@@ -970,7 +939,7 @@ section {
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--color-primary);
+  background-color: #0d6efd;
 }
 
 @media (max-width: 767px) {
@@ -995,7 +964,7 @@ section {
 --------------------------------------------------------------*/
 .team .member {
   text-align: center;
-  background: #fff;
+  background: var(--color-primary);
   border-radius: 10px;
   padding: 15px;
   overflow: hidden;
@@ -1041,7 +1010,7 @@ section {
 }
 
 .team .member .social a {
-  color: #a2a2a2;
+  color: var(--bs-blue);
   transition: 0.3s;
   border-radius: 50%;
   width: 40px;
@@ -1049,12 +1018,13 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #bbbbbb;
+  border: 1px solid var(--bs-blue);
 }
 
 .team .member .social a:hover {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: var(--bs-orange);
+  border-color: var(--bs-orange);
+  margin-top: -4px;
 }
 
 .team .member .social i {
