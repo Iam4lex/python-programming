@@ -1393,7 +1393,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   font-size: 14px;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)) ,url(/assets/img/footer\ bg.jpg) top center no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(/assets/img/footer\ bg.jpg) top center no-repeat;
   padding: 50px 0;
   color: white;
 }
