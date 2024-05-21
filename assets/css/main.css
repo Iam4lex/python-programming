@@ -186,7 +186,7 @@ section {
 }
 
 .scroll-top:hover {
-  background: rgba(248, 90, 64, 0.8);
+  background: var(--bs-blue);
   color: #fff;
 }
 
@@ -362,42 +362,6 @@ section {
     min-width: 200px;
   }
 
-  .navbar .dropdown ul a {
-    padding: 10px 20px;
-    font-size: 15px;
-    text-transform: none;
-    font-weight: 600;
-    color: #006a5d;
-  }
-
-  .navbar .dropdown ul a i {
-    font-size: 12px;
-  }
-
-  .navbar .dropdown ul a:hover,
-  .navbar .dropdown ul .active:hover,
-  .navbar .dropdown ul li:hover>a {
-    color: var(--color-secondary);
-  }
-
-  .navbar .dropdown:hover>ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-  }
-
-  .navbar .dropdown .dropdown ul {
-    top: 0;
-    left: calc(100% - 30px);
-    visibility: hidden;
-  }
-
-  .navbar .dropdown .dropdown:hover>ul {
-    opacity: 1;
-    top: 0;
-    left: 100%;
-    visibility: visible;
-  }
 }
 
 @media (min-width: 1280px) and (max-width: 1600px) {
@@ -438,7 +402,7 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: rgba(0, 131, 116, 0.9);
+    background: var(--bs-blue);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -481,28 +445,6 @@ section {
     color: #fff;
   }
 
-  .navbar .getstarted:hover,
-  .navbar .getstarted:focus:hover {
-    color: #fff;
-    background: rgba(0, 131, 116, 0.8);
-  }
-
-  .navbar .dropdown ul,
-  .navbar .dropdown .dropdown ul {
-    position: static;
-    display: none;
-    padding: 10px 0;
-    margin: 10px 20px;
-    transition: all 0.5s ease-in-out;
-    background-color: #007466;
-    border: 1px solid #006459;
-  }
-
-  .navbar .dropdown>.dropdown-active,
-  .navbar .dropdown .dropdown>.dropdown-active {
-    display: block;
-  }
-
   .mobile-nav-show {
     color: rgba(255, 255, 255, 0.6);
     font-size: 28px;
@@ -537,7 +479,7 @@ section {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 106, 93, 0.8);
+    background: var(--bs-blue);
     z-index: 9996;
   }
 }
@@ -614,6 +556,14 @@ section {
 .about .readmore:hover{
   background: #1153b6ef;
   border: 2px solid #1153b6ef;
+}
+
+
+@media screen and (max-width: 650px) {
+  .about .readmore{
+    margin-left: 0;
+    padding: 10px 30px;
+  }
 }
 
 
@@ -843,6 +793,8 @@ section {
   margin-top: 15px;
   display: inline-block;
   color: var(--color-primary);
+  background: var(--bs-orange);
+  padding: 10px 20px;
 }
 
 .services .service-item:hover .icon:before {
@@ -1196,6 +1148,24 @@ section {
   .hero .btn-get-started,
   .hero .btn-watch-video {
     font-size: 14px;
+    width: 90%;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-watch-video i{
+    margin-left: 0;
   }
 }
 
@@ -1524,12 +1494,6 @@ section {
   text-align: center;
 }
 
-.footer .credits {
-  padding-top: 4px;
-  text-align: center;
-  font-size: 13px;
-}
-
-.footer .credits a {
-  color: #fff;
+.footer .copyright span{
+  color: var(--bs-orange);
 }
