@@ -722,7 +722,7 @@ section {
 --------------------------------------------------------------*/
 .services {
   padding: 60px 0;
-  background: linear-gradient(rgba(22, 138, 192, 0.764),rgba(22, 138, 192, 0.764)), url(/assets/img/sta.jpeg) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.764),rgba(0, 0, 0, 0.764)), url(/assets/img/bg\ image.jpeg) no-repeat;
   background-position: center;
   background-size: cover;
   color: #fff;
