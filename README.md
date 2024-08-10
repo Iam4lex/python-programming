@@ -1,1 +1,1 @@
-## A challange of learning python for 100 days and doing some cybersecurity projects.
+- 100 days challange of learning and doing python projects.
