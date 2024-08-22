@@ -84,3 +84,38 @@ print(fruits)
 print(x)
 print(y)
 print(z)
+
+#           PYTHON VARIABLES
+# 1. Global variables - They are variables that are created outside a function
+message = "I love python programming"
+
+def myFunction():
+    print(message) # print the message in the terminal
+
+myFunction() # Call the function
+
+# 2. Local variables - They are variables that are used inside the function
+# - If there is a local variable and a grobal variable, the global variable will remain as it is and woun't be overwriten by the local vaiable
+
+message = "Hello world" # This is an example of a global variable
+
+def my_function():
+    message = "I love python programming!" # This is a local variable and will only be used inside the function
+
+    print(message) # prints I love python programming because the local variable replaced it in the function
+    print(message) # Prints I love python programming
+
+my_function() # call the function
+
+print(message) # prints Hello world in the terminal
+
+# You can also create a global variable using the global key word
+
+def myFunction():
+    global globalVariable
+    globalVariable = "Hey there! Do you like coding ?"
+
+myFunction() # call the function
+
+print(globalVariable) # This can now be accessed ouside the function
+
