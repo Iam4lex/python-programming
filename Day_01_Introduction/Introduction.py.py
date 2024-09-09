@@ -119,3 +119,6 @@ myFunction() # call the function
 
 print(globalVariable) # This can now be accessed ouside the function
 
+
+print(3 // 2)
+print(3 ** 2) # Exponential 
