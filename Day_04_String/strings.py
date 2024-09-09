@@ -1,31 +1,31 @@
 
 # Single line comment
-letter = 'P'                # A string could be a single character or a bunch of texts
-print(letter)               # P
-print(len(letter))          # 1
+letter = 'Peter'                # A string could be a single character or a bunch of texts
+print(letter)               # Peter
+print(len(letter))          # 5
 greeting = 'Hello, World!'  # String could be  a single or double quote,"Hello, World!"
 print(greeting)             # Hello, World!
 print(len(greeting))        # 13
-sentence = "I hope you are enjoying 30 days of python challenge"
+sentence = "I hope you are enjoying 100 days of python challenge"
 print(sentence)
 
 # Multiline String
-multiline_string = '''I am a teacher and enjoy teaching.
+multiline_string = '''I am a student and enjoy learning.
 I didn't find anything as rewarding as empowering people.
-That is why I created 30 days of python.'''
+That is why I created 100 days of python.'''
 print(multiline_string)
 # Another way of doing the same thing
-multiline_string = """I am a teacher and enjoy teaching.
+multiline_string = """I am a student and enjoy learning.
 I didn't find anything as rewarding as empowering people.
-That is why I created 30 days of python."""
+That is why I created 100 days of python."""
 print(multiline_string)
 
 # String Concatenation
-first_name = 'Asabeneh'
-last_name = 'Yetayeh'
+first_name = 'Alex'
+last_name = 'Mwangi'
 space = ' '
 full_name = first_name  +  space + last_name
-print(full_name) # Asabeneh Yetayeh
+print(full_name) # Alex Mwangi
 # Checking length of a string using len() builtin function
 print(len(first_name))  # 8
 print(len(last_name))   # 7
@@ -89,12 +89,12 @@ print('In every programming language it starts with \"Hello, World!\"')
 ## String Methods
 # capitalize(): Converts the first character the string to Capital Letter
 
-challenge = 'thirty days of python'
-print(challenge.capitalize()) # 'Thirty days of python'
+challenge = '100 days of python'
+print(challenge.capitalize()) # '100 days of python'
 
 # count(): returns occurrences of substring in string, count(substring, start=.., end=..)
 
-challenge = 'thirty days of python'
+challenge = '100 days of python'
 print(challenge.count('y')) # 3
 print(challenge.count('y', 7, 14)) # 1
 print(challenge.count('th')) # 2`

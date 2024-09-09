@@ -23,5 +23,21 @@ def globalVariable(): # Define the function
 globalVariable()
 
 # 3. Using the global keyword
-# The global keyword can be used to 
+# The global keyword can be used to inside a function but be accessed inside or outside that function
+
+greetings = "Hello world"
+
+def myFunction():
+
+    global global_variable
+
+    global_variable = "I am a global variable. I can be accessed inside and outside a function."
+    
+    print(global_variable)
+
+myFunction() # call the function
+
+# access the global_variable outside a function
+
+print(global_variable)
 

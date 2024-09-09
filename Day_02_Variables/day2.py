@@ -36,6 +36,8 @@ myInfo = {
 
 print(type(myInfo))
 
+print(myInfo)
+
 #           PYTHON NUMBERS
 # There are 3 types of numbers in python -> int, float, and complex
 x = 4 # int 
