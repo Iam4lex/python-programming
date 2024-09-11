@@ -43,3 +43,24 @@ def generate_full_name():
     full_name = first_name + ' ' + last_name
     return full_name
 print(generate_full_name())
+
+
+# FUNCTIONS WITH PARAMETERS
+
+# syntax
+# Declaring a function
+#def function_name(parameter):
+   # codes
+   # codes
+# Calling function
+#print(function_name(argument))
+
+# Example
+def function(name):
+
+    message = name + " loves coding. Do you ?"
+
+    return message
+
+print(function('Alex'))
+
