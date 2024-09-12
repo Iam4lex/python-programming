@@ -22,3 +22,18 @@ def area_of_circle(radius):
     area = ( 22 * radius * radius ) / 7
 
     return area
+
+
+# USING BUILT IN FUNCTIONS
+
+# Built in functions include sys, math, os, etc
+
+# example
+
+import os
+
+os.mkdir("C:\\Users\\alexm\Desktop\\100-days-of-code\\Python_Programming") # make the directory
+
+# os.chdir() # Chnage the directory
+
+
