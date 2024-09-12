@@ -32,8 +32,28 @@ def area_of_circle(radius):
 
 import os
 
-os.mkdir("C:\\Users\\alexm\Desktop\\100-days-of-code\\Python_Programming") # make the directory
+# os.mkdir("C:\\Users\\alexm\Desktop\\100-days-of-code\\Python_Programming") # make the directory
 
 # os.chdir() # Chnage the directory
 
 
+
+from math import pi, sqrt, pow, floor, ceil, log10
+print(pi)                 # 3.141592653589793
+print(sqrt(2))            # 1.4142135623730951
+print(pow(2, 3))          # 8.0
+print(floor(9.81))        # 9
+print(ceil(9.81))         # 10
+# print(math.log10(100))    # 2
+
+
+# we an also import all modules using the *
+
+from math import *
+
+print(pi)                 # 3.141592653589793
+print(sqrt(2))            # 1.4142135623730951
+print(pow(2, 3))          # 8.0
+print(floor(9.81))        # 9
+print(ceil(9.81))         # 10
+# print(math.log10(100))    # 2
