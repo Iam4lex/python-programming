@@ -41,8 +41,13 @@ print(n)
 # example of a list
 # systax => list_name = ['list']
 
-list_of_fluits = ['Mango', 'Apple', "Avocado", "Mango"]
+list_of_fluits = ['Mango', 'Apple', "Avocado", "Tomato"]
 print("The list of fluits is ", list_of_fluits)
+
+# Reverse the list
+list_of_fluits.reverse()
+
+print("The reversed list is ",list_of_fluits )
 
 # -  The list object
 
