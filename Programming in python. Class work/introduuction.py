@@ -43,3 +43,7 @@ print(n)
 
 list_of_fluits = ['Mango', 'Apple', "Avocado", "Mango"]
 print("The list of fluits is ", list_of_fluits)
+
+# -  The list object
+
+
