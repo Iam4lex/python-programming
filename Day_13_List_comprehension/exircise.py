@@ -15,6 +15,8 @@ print(filtered_numbers)
 
 list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
 
-flatten_numbers = [number for i in list_of_lists for number in i ]
+flatten_numbers = [number for i in list_of_lists for number in i]
 
-print(flatten_numbers)
+list_of_numbers = [number for i in flatten_numbers for number in i]
+
+print(list_of_numbers)
