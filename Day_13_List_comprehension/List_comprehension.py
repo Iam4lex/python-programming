@@ -9,7 +9,7 @@ change_to_list = list(my_name) # Chnage the string my_name to list
 print("My name is ", my_name)
 print("The list is ", change_to_list)
 
-# Another way to convert the list is
+# Another way to convert the list is : List comprehension
 
 full_name = "Alex Mwangi"
 
