@@ -34,3 +34,32 @@ print(squre_of_numbers)
 list_of_tuples = [(i , i * i) for i in range(10)]
 
 print(list_of_tuples)
+
+# Generating Even Numbers
+
+number = int(input("Enter any number "))
+
+for i in range(1, number):
+    if(( i % 2) == 0):
+        print(i) 
+
+
+# Even numbers using list comprehension
+
+even_numbers = [i for i in range(1, 10+1) if i % 2 == 0]
+
+print(even_numbers)
+
+
+# LAMBDA FUNCTIONS
+# To create a lamda function, we use the lambda keyword
+
+# syntax
+# name_of_the_function = lamba parameter1, parameter2 : parameter1 + parameter2
+# name_of_the_function(argument1,argument2)
+
+# Example
+
+my_lambda_function = lambda first_number, second_number : first_number + second_number
+
+print(my_lambda_function(10,30)) # Prints 40
