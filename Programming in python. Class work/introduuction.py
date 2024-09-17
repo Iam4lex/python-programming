@@ -85,4 +85,3 @@ _tuple_ = 5, 7, 6, 2
 print(_tuple_)
 print(len(_tuple_), max(_tuple_))
 
-
