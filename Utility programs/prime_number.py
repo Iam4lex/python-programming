@@ -1,12 +1,15 @@
-# A program to print all prime numbers between 1 and number
 
-number = int(input("Enter the number "))
+# Program to check if a number is prime or not
 
-num = 1
+count = 0
 
-for num in range(1, number):
+number = input("Please enter a positive integer: ")
+number = int(number)
 
-    if num % num == 0:
-        if num / 1 == 0:
-            
-            print(num)
+for i in range(1, (number+1)):
+    if number % i == 0:
+        count += 1
+if count == 2:
+    print("Prime")
+else:
+    print("Not prime")
