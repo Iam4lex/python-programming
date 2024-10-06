@@ -1,1 +1,1 @@
-s.remove(r"C:\Users\alexm\Desktop\Python programming\Utility programs\passwords.txt")
+passwords.txt
