@@ -69,3 +69,5 @@ if len(list1) > 0:
     print(f"Sum: {sum[list1]}")
 
 # break statement is used to terminate a loop
+# continue statement is used to return the next aliteration of the loop
+
