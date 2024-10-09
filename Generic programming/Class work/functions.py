@@ -24,3 +24,20 @@ def first_name(full_name):
     return given_name
 
 print(first_name(full_name = input("Please enter your full name: ")))
+
+
+## pay
+
+def pay(wage, hours):
+
+    if hours <= 40:
+        amount = wage * hours
+    
+    else:
+        amount = (wage * 40) + ((1.5) * wage * (hours - 40))
+
+        return amount
+    
+hourly_wage = eval(input("Enter the hourly wage: "))
+hours_worked =  eval(input("Enter the number of hours worked: "))
+print(pay(hourly_wage, hours_worked))
