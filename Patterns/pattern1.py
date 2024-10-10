@@ -1,5 +1,18 @@
 
-for i in range(1,99):
-    for j in range(1, i):
-        print("*", end="")
+"""
+    Python program to print the following perttern
+    * * * * * * * * * 
+    * * * * * * * * *
+    * * * * * * * * *
+    * * * * * * * * *
+    * * * * * * * * * 
+    * * * * * * * * *
+    * * * * * * * * * 
+    * * * * * * * * * 
+    * * * * * * * * *
+"""
+
+for column in range(1, 10):
+    for row in range(1, 10):
+        print("*", end=" ")
     print()
