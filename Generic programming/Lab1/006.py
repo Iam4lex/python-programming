@@ -14,18 +14,16 @@ Output: your participation.
 
 """
 
-def word_letters(text):
-    words_frequency = {}
+text = input("Enter text: ")
+if len(text) > 1000:
+    print("The number of letters in the text must be less than or equal to 1000.")
+else:
+    frequency = {}
     words = text.split(" ")
-    frequent_word = []
 
     for word in words:
         word = word.strip("!?.,")
-        words_frequency[word] =   words_frequency.get(word, 0) + 1
-
-    for key, value in words_frequency.items():
-        frequent_word.append(value)
-        if value == max(frequent_word):
-            print(key)
-text = input("Enter text: ")
-word_letters(text)
+        frequency[word] =   frequency.get(word, 0) + 1
+    frequently_word = max(frequency, key=frequency.get)
+    long_word = max(frequency, key=len)
+    print(frequently_word, long_word)

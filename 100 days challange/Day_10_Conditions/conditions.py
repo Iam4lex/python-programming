@@ -49,3 +49,29 @@ elif temperature == 37:
 
 else:
     print("You have cold")
+
+
+"""
+    Shorthand of if else statement
+    syntax
+    code if condition else code
+"""
+# Example
+number = 110
+number = int(number)
+print(f"{number} is positive.") if number > 0 else print(f"{number} is negative.")
+
+"""
+    Netsted conditions
+    syntax
+    if condition:
+        if condition:
+            code
+        else:
+            code
+    elif condition:
+        if condition:
+            code
+    else:
+        code
+"""
