@@ -30,6 +30,9 @@ does_exist = 'Alex' in lst
 print(does_exist)
 print(len(lst))
 
+
+
+
 # Adding items in a list
 my_list = [] # create an empty list
 my_list.append("Mango")
@@ -46,5 +49,7 @@ name = input("Please entter the name: ")
 
 
 print(name)
+
+
 
 

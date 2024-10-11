@@ -12,6 +12,7 @@
 
 # example
 
+# A function can be declared with or without parameters
 def my_function():
     # block of code goes here.
     print("Helllo world!")
