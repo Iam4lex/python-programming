@@ -4,7 +4,7 @@
 
 numbers = [-4, -3, -2, -1, 0, 2, 4, 6]
 
-filtered_numbers = [i for i in numbers if i <= 0]
+filtered_numbers = [num for num in numbers if num <= 0]
 
 print(filtered_numbers)
 
@@ -22,6 +22,10 @@ list_of_numbers = [number for i in flatten_numbers for number in i]
 print(list_of_numbers)
 
 
-numbers = [10, 20, 30, 40, 50]
+# Flatten the following list to a new list:
 
-print(f"{[ i for i in numbers]}")
+# countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+# output:
+# [['FINLAND','FIN', 'HELSINKI'], ['SWEDEN', 'SWE', 'STOCKHOLM'], ['NORWAY', 'NOR', 'OSLO']]
+
+countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
