@@ -20,3 +20,8 @@ flatten_numbers = [number for i in list_of_lists for number in i]
 list_of_numbers = [number for i in flatten_numbers for number in i]
 
 print(list_of_numbers)
+
+
+numbers = [10, 20, 30, 40, 50]
+
+print(f"{[ i for i in numbers]}")

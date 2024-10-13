@@ -1,65 +1,57 @@
 
-# You can change a string of characters into a list in different ways.
-# Example
-
-my_name = "Alex Mwangi"
-
-change_to_list = list(my_name) # Chnage the string my_name to list
-
-print("My name is ", my_name)
-print("The list is ", change_to_list)
-
-# Another way to convert the list is : List comprehension
-
-full_name = "Alex Mwangi"
-
-the_list = [i for i in full_name]
-
-print("The same list is ",the_list)
+#  syntax
+#  [i for i in iterable if expresion]
 
 
-list_of_numbers = [i for i in range(10)] # Numbers between 0 and 10 ie. 1-9
+# for example you want to change a string to alist, you can use many methods
 
-print(list_of_numbers) # prints [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# method 1
+string = "My string"
 
-# You can also print the squres of the list_of_numbers
+my_list = list(string) # Change the string to a list
 
-squre_of_numbers = [i * i for i in range(10)]
+print(my_list)
 
-print(squre_of_numbers)
+# meethod 2: using list coprehension
+string = "My string"
+
+my_list = [i for i in string]
+
+print(my_list)
+
+# Example 2: for example you want to generate a list of numbers you can use a list comprension
+# List of numbers
+list_of_numbers = [num for num in range(1, 10+1)]
+
+print(list_of_numbers)
+
+# Squre of numbers
+list_of_squres = [num * num for num in range(1, 10+1)]
+
+print(list_of_squres)
+
+# List of numbers and their squres
+list_of_nums_and_squres = [(num, num * num) for num in range(1, 10+1)]
+
+print(list_of_nums_and_squres)
 
 
-# You can also print list of tuples
+# List comprehension can be combined with if expresion
+number = 30
 
-list_of_tuples = [(i , i * i) for i in range(10)]
+odd_numbers = [odd for odd in range(1, number+1) if odd%2 == 1]
 
-print(list_of_tuples)
+print(odd_numbers)
 
-# Generating Even Numbers
+#  Filtering positive even numbers
+numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
 
-number = int(input("Enter any number "))
-
-for i in range(1, number):
-    if(( i % 2) == 0):
-        print(i) 
-
-
-# Even numbers using list comprehension
-
-even_numbers = [i for i in range(1, 10+1) if i % 2 == 0]
+even_numbers = [even for even in numbers if even%2 == 0 and even > 0]
 
 print(even_numbers)
 
+# Lambda function
+add_numbers = lambda first_number, second_number: first_number + second_number
 
-# LAMBDA FUNCTIONS
-# To create a lamda function, we use the lambda keyword
+print(add_numbers(10, 20)) # prints 30
 
-# syntax
-# name_of_the_function = lamba parameter1, parameter2 : parameter1 + parameter2
-# name_of_the_function(argument1,argument2)
-
-# Example
-
-my_lambda_function = lambda first_number, second_number : first_number + second_number
-
-print(my_lambda_function(10,30)) # Prints 40
