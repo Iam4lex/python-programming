@@ -1,8 +1,26 @@
-def sum_numbers(nums):  # normal function
-    return sum(nums)    # a sad function abusing the built-in sum function :<
 
-def higher_order_function(f, lst):  # function as a parameter
-    summation = f(lst)
-    return summation
-result = higher_order_function(sum_numbers, [1, 2, 3, 4, 5])
-print(result)       # 15
+# Normal function
+def greet(hello):
+    return hello
+
+# Higher order function
+def my_func(func):
+
+    func = "Hello world"
+
+    return func
+
+print(my_func(greet))
+
+
+# area
+import math
+def my_function(radius):
+    return radius
+
+def area_of_circle(area):
+    radius = 7
+
+    return math.pi * radius**2
+
+print(area_of_circle(my_function))
