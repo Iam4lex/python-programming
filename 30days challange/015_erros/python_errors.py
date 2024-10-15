@@ -1,59 +1,29 @@
 
-# Python has alot of types of errors that we can make when writing our code.
+# Python errors
 
-# 1. Module not found error
+# 1. Syntax error
+# print 'Hello world' # This displays a syntax error
+print('Hello world') # This is the correct syntax
 
-# import maths # This will print an error
-import math # This is correct
+# Name error
+# print(name) # This will print an error because the name is not defined
 
-# 2. Attriubute error
-math.PI # This will print an error AttributeError: module 'math' has no attribute 'PI'. Did you mean: 'pi'?
+name = "Alex Mwangi"
+print(f"{name} is of type {type(name)}") # This is the correct syntax because the name is defined
 
+# IndexError
+my_list = [1,2,4,5,15]
+# print(my_list[5]) # This will print and index error because 5 is out of range
+print(my_list[4])
 
-# 3. SyntaxError
+# ModuleNotFoundError
+# import maths : This will generate an error becaause the module maths does no exist
+import math # This is the correct syntax
+print(math.pi)
 
-# This will raise a SyntaxError due to the missing colon at the end of the if statement.
-# if 5 > 2
-#     print("5 is greater than 2")
+# AttributeError
+import math
+# print(math.PI) : # This will print an attribute error module 'math' has no attribute 'PI'. Did you mean: 'pi'?
+print(math.pi) # This is the correct syntax
 
-# Correct version:
-if 5 > 2:
-    print("5 is greater than 2")
-
-# 4. IndentationError
-
-# This will raise an IndentationError because the second print statement is not properly indented.
-# if 5 > 2:
-# print("5 is greater than 2")
-
-# Correct version:
-if 5 > 2:
-    print("5 is greater than 2")
-
-# 5. NameError
-
-# Trying to use a variable that hasn’t been defined will raise a NameError.
-# print(number)  # NameError: name 'number' is not defined
-
-# Correct version:
-number = 10
-print(number)  # This will print 10
-
-# 6. TypeError
-
-# This will raise a TypeError because we can't concatenate a string with an integer.
-# age = 25
-# print("I am " + age + " years old")
-
-# Correct version:
-age = 25
-print("I am " + str(age) + " years old")  # Convert the integer to a string
-
-# 7. ValueError
-
-# Trying to convert an invalid string to an integer will raise a ValueError.
-# int("abc")  # ValueError: invalid literal for int() with base 10: 'abc'
-
-# Correct version:
-valid_number = int("123")  # This will correctly convert the string to an integer
-print(valid_number)  # Output: 123
+# KeyError
