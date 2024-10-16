@@ -17,3 +17,10 @@ min = now.minute
 second = now.second
 timestamp = now.timestamp()
 print(year, month, day, hour, min, second, timestamp)
+
+print(f"{year}/{month}/{day} {hour}:{min}")
+
+# Formating the datetime using the strftime() 
+
+now = now.strftime("%d/%m%Y, %H:%M:%S")
+print(now)
