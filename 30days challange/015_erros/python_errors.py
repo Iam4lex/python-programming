@@ -27,3 +27,18 @@ import math
 print(math.pi) # This is the correct syntax
 
 # KeyError
+# This occurs when you are trying to access a key value that does not exist
+my_dictionary = {
+    "name": "Aleex",
+    "Age": 54,
+    "Hobby": "Gaming"
+}
+# print(my_dictionary['height']) : This will print a KeyError
+print(my_dictionary['Age'])
+
+# TypeError
+# print(3 + '4') : This will print a TypeError because the string can't be added to an int
+print(f"My name is {name + " Mungai"} and I am {my_dictionary['Age'] + 6} years old") # This is the correct syntax
+
+# ImportError
+# from math import power : This will generate an error 

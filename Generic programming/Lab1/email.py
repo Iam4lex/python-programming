@@ -6,5 +6,5 @@ dot= email.rfind(".")
 username = email[:char]
 companyName = email[char+1:dot]
 
-print(username.upper())
-print(companyName.title())
+print("Username: ",username.upper())
+print("Company: ",companyName.title())
