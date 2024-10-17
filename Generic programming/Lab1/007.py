@@ -15,7 +15,7 @@ True
 False
 
 """
-numbers = ([12, 5, 0], 10)
+numbers = ([12, 5, -2, 0], 10)
 
 number, k = numbers
 seen = set()
