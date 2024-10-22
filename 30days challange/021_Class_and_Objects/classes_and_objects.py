@@ -40,5 +40,24 @@ class person:
         self.second_name = second_name
 
 # Create an object of the class
-p = person("Alex", " Mwangi")
-print(p.first_name)
+p = person("Alex", "Mwangi")
+print(f"Hello {p.first_name} {p.second_name}! Do you enjoy programming?")
+
+# Finding the area of a circle using a class
+
+# Define the class
+import math
+
+class Area:
+
+    # Define the __init__ method
+    def __init__(self, radius):
+        # Atributes
+        self.radius = radius
+
+    def find_area(self):
+        return f"The area is {math.pi * self.radius ** 2}"
+
+# Creating an object of the class area
+a = Area(7)
+print(a.find_area())        
