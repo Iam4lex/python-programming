@@ -51,6 +51,8 @@ even_numbers = [even for even in numbers if even%2 == 0 and even > 0]
 print(even_numbers)
 
 # Lambda function
+# syntax
+# lambda par1, par2, ...: expresion
 add_numbers = lambda first_number, second_number: first_number + second_number
 
 print(add_numbers(10, 20)) # prints 30
