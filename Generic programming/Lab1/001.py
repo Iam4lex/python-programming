@@ -4,11 +4,15 @@
 determines whether all the numbers are different from each other. 
 '''
 
+# Define a function
+def sequence_of_numbers():
+    list_of_numbers = [1, 2, 3, 4, 5, 5]
 
-def is_all_number_unique(numbers):
-    print(len(numbers) == len(set(numbers)))
+    if len(list_of_numbers) == set(list_of_numbers):
+        print("Numbers are unique")
+    
+    else:
+        print("Numbers are not unique")
 
-
-sequence = [1, 2, 3, 4, 5, 2]
-
-is_all_number_unique(sequence)
+# Call the function
+sequence_of_numbers()
