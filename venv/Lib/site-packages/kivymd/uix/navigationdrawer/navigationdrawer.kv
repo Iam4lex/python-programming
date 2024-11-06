@@ -1,0 +1,83 @@
+#:import Window kivy.core.window.Window
+
+
+<MDNavigationDrawer>
+    type: "filled"
+    size_hint_x: None
+    width: Window.width - dp(56) if Window.width <= dp(360) else dp(320)
+    theme_bg_color: "Custom"
+    shadow_radius: self.radius
+    md_bg_color:
+        self.theme_cls.surfaceContainerLowColor \
+        if not self.background_color else \
+        self.background_color
+    x:
+        (self.width * (self.open_progress - 1)) \
+        if self.anchor == "left" \
+        else (Window.width - self.width * self.open_progress)
+
+
+<MDNavigationDrawerLabel>
+    adaptive_height: True
+    padding: "20dp", "0dp", "16dp", "16dp"
+    text_color:
+        self.theme_cls.onSurfaceColor \
+        if self.theme_text_color == "Primary" else \
+        self.text_color
+
+
+<MDNavigationDrawerItem>
+    radius: self.height / 2
+    ripple_color: self.theme_cls.onSecondaryContainerColor[:-1] + [0.12]
+    theme_bg_color: "Custom"
+    md_bg_color:
+        self.theme_cls.surfaceContainerLowColor \
+        if not self.inactive_indicator_color else \
+        self.inactive_indicator_color
+
+
+<MDNavigationDrawerItemTrailingText>
+    text_color:
+        self.theme_cls.onSurfaceVariantColor \
+        if self.theme_text_color == "Primary" else \
+        self.text_color
+
+
+<MDNavigationDrawerItemText>
+    font_style: "Label"
+    role: "large"
+    text_color:
+        self.theme_cls.onSurfaceVariantColor \
+        if self.theme_text_color == "Primary" else \
+        self.text_color
+
+
+<MDNavigationDrawerItemLeadingIcon>
+    icon_color:
+        self.theme_cls.onSurfaceVariantColor \
+        if self.theme_icon_color == "Primary" else \
+        self.icon_color
+
+
+<MDNavigationDrawerHeader>
+    size_hint_y: None
+    height: self.minimum_height
+
+
+<MDNavigationDrawerDivider>
+    padding: 0, "4dp", 0, "4dp"
+    size_hint_y: None
+    height: self.minimum_height
+
+    MDDivider:
+
+
+<MDNavigationDrawerMenu>
+
+    GridLayout:
+        id: menu
+        cols: 1
+        size_hint_y: None
+        height: self.minimum_height
+        spacing: root.spacing
+

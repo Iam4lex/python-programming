@@ -1,0 +1,43 @@
+<MDDropDownItem>
+    size_hint: None, None
+    size:
+        (self._size[0] + dp(12), self._size[1] + dp(8)) \
+        if self._size else \
+        (0, 0)
+    md_bg_color: "red"
+
+    canvas:
+        Color:
+            group: "drop-down-item-color"
+        Rectangle:
+            group: "drop-down-item-text"
+            texture:
+                self._drop_down_text.texture \
+                if self._drop_down_text else \
+                None
+            size:
+                self._drop_down_text.texture_size \
+                if self._drop_down_text else \
+                (0, 0)
+            pos:
+                self.x, self.y + dp(8)
+        Color:
+            group: "drop-down-item-triangle-color"
+        Triangle:
+            points:
+                [ \
+                self.right + dp(0), self.y + dp(12), \
+                self.right - dp(6), self.y + dp(12), \
+                self.right - dp(6), self.y + root.height - dp(3) \
+                ]
+
+    MDDivider:
+        size_hint_x: None
+        width: root._size[0] + dp(14) if root._size else 0
+
+
+<MDDropDownItemText>
+    size_hint_x: None
+    width: self.texture_size[0]
+    adaptive_width: True
+    role: "small"

@@ -1,0 +1,109 @@
+<MDNavigationRailMenuButton>
+    pos_hint: {"center_x": .5}
+    theme_icon_color: "Custom"
+    icon_color: self.theme_cls.onSurfaceVariantColor
+
+
+<MDNavigationRailFabButton>
+    type: "standard"
+    pos_hint: {"center_x": .5}
+    theme_bg_color: "Custom"
+    md_bg_color: self.theme_cls.primaryColor
+    theme_icon_color: "Custom"
+    icon_color: self.theme_cls.onPrimaryColor
+
+
+<MDNavigationRailItem>
+    orientation: "vertical"
+    size_hint: None, None
+    width: "80dp"
+    height: self.minimum_height
+    spacing:
+        ( \
+        { \
+        "selected": "8dp", \
+        "labeled": "16dp", \
+        "unselected": "16dp", \
+        }[self._navigation_rail.type] \
+        ) \
+        if self._navigation_rail else 0
+
+
+<MDNavigationRailItemIcon>
+    canvas.before:
+        Color:
+            rgba:
+                ( \
+                ( \
+                self.theme_cls.secondaryContainerColor \
+                if not self.active_indicator_color else \
+                self.active_indicator_color \
+                )[:-1] + [self._alpha] \
+                ) \
+                if self._layer_color == self.theme_cls.transparentColor else \
+                self._layer_color
+        RoundedRectangle:
+            group: "navigation-rail-rounded-rectangle"
+            radius:
+                ( \
+                [ \
+                ( \
+                dp(16) \
+                if self._navigation_rail.type != "unselected" else \
+                dp(28) \
+                ), \
+                ] \
+                ) \
+                if self._navigation_rail else [0, ]
+            pos:
+                self.center_x - self._selected_region_width / 2, \
+                ( \
+                self.y \
+                - ( \
+                dp(4) \
+                if self._navigation_rail.type != "unselected" else \
+                dp(16) \
+                ) \
+                ) \
+                if self._navigation_rail else 0
+            size:
+                self._selected_region_width, \
+                ( \
+                self.height \
+                + ( \
+                dp(8) \
+                if self._navigation_rail.type != "unselected" else \
+                self.width + dp(8)\
+                ) \
+                ) \
+                if self._navigation_rail else 0
+
+    pos_hint: {"center_x": .5}
+
+
+<MDNavigationRailItemLabel>
+    size_hint_y: None
+    height: 0
+    halign: "center"
+    text_color: self.theme_cls.onSurfaceVariantColor
+    font_style: "Label"
+    role: "medium"
+
+
+<MDNavigationRail>
+    size_hint: None, 1
+    width: "80dp"
+    md_bg_color: self.theme_cls.surfaceColor
+
+    BoxLayout:
+        id: box_items
+        orientation: "vertical"
+        size_hint: None, None
+        size: self.minimum_size
+        pos_hint: {"center_x": .5}
+        spacing:
+            { \
+            "selected": "12dp", \
+            "labeled": "24dp", \
+            "unselected": "36dp", \
+            }[root.type]

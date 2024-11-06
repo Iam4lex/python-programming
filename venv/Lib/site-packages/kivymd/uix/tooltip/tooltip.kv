@@ -1,0 +1,78 @@
+<MDTooltipPlain>
+    adaptive_size: True
+    opacity: 0
+    font_style: "Body"
+    role: "small"
+    padding: "8dp", "4dp", "8dp", "4dp"
+    radius: [dp(4), ]
+    scale_value_x: 0
+    scale_value_y: 0
+    text_color:
+        self.theme_cls.inverseOnSurfaceColor \
+        if self.theme_text_color == "Primary" else \
+        self.text_color
+
+    canvas.before:
+        Color:
+            rgba:
+                self.theme_cls.inverseSurfaceColor \
+                if self.theme_bg_color == "Primary" else \
+                self.md_bg_color
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: self.radius
+
+
+<MDTooltipRich>
+    orientation: "vertical"
+    scale_value_x: 0
+    scale_value_y: 0
+    opacity: 0
+    radius: [dp(12), ]
+    size_hint: None, None
+    size: self.minimum_size
+    padding: "16dp", "12dp", "16dp", "8dp"
+    spacing: "4dp"
+    elevation_level: 2
+    elevation: self.elevation_levels[self.elevation_level]
+    md_bg_color:
+        self.theme_cls.surfaceContainerColor \
+        if self.theme_bg_color == "Primary" else \
+        self.md_bg_color
+    shadow_softness:
+        2 \
+        if self.theme_shadow_softness == "Primary" else \
+        self.shadow_softness
+    shadow_offset:
+        (0, -1) \
+        if self.theme_shadow_offset == "Primary" else \
+        self.shadow_offset
+    shadow_radius: [value - 2 for value in self.radius]
+
+<MDTooltipRichSubhead>
+    bold: True
+    adaptive_size: True
+    font_style: "Title"
+    role: "small"
+    text_color:
+        self.theme_cls.onSurfaceVariantColor \
+        if self.theme_text_color == "Primary" else \
+        self.text_color
+
+
+<MDTooltipRichActionButton>
+    style: "text"
+    _text_left_pad: 0
+    _text_right_pad: 0
+    ripple_effect: False
+
+
+<MDTooltipRichSupportingText>
+    adaptive_size: True
+    font_style: "Body"
+    role: "medium"
+    text_color:
+        self.theme_cls.onSurfaceVariantColor \
+        if self.theme_text_color == "Primary" else \
+        self.text_color

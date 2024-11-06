@@ -1,0 +1,218 @@
+<MDSlider>
+    canvas:
+        Clear
+        # Inactive track.
+        Color:
+            rgba:
+                ( \
+                self.theme_cls.surfaceVariantColor \
+                if not self.track_inactive_color else \
+                self.track_inactive_color \
+                ) \
+                if not self.disabled else \
+                self.theme_cls.onSurfaceColor[:-1] + [.12]
+        SmoothRectangle:
+            size:
+                ( \
+                self.width - self.padding * 2, \
+                self.track_inactive_width \
+                ) \
+                if self.orientation == "horizontal" else \
+                ( \
+                self.track_inactive_width, \
+                self.height - self.padding * 2 \
+                )
+            pos:
+                ( \
+                self.x + self.padding, \
+                self.center_y - self.track_inactive_width \
+                ) \
+                if self.orientation == "horizontal" else \
+                ( \
+                self.center_x - self.track_inactive_width, \
+                self.y + self.padding \
+                )
+
+        # Active track.
+        Color:
+            rgba:
+                ( \
+                self.theme_cls.primaryColor \
+                if not self.track_active_color else \
+                self.track_active_color \
+                ) \
+                if not self.disabled else \
+                self.theme_cls.onSurfaceColor[:-1] + [.38]
+        SmoothRectangle:
+            size:
+                ( \
+                (self.width - self.padding * 2) * self.value_normalized, \
+                self.track_active_width \
+                ) \
+                if self.orientation == "horizontal" else \
+                ( \
+                self.track_active_width, \
+                (self.height - self.padding * 2) * self.value_normalized \
+                )
+            pos:
+                (self.x + self.padding, self.center_y - self.track_active_width) \
+                if self.orientation == "horizontal" else \
+                (self.center_x - self.track_active_width, self.y + self.padding)
+
+        # Points of the inactive track when a step is used.
+        Color:
+            rgba:
+                ( \
+                self.theme_cls.onPrimaryColor \
+                if not self.track_active_step_point_color else \
+                self.track_active_step_point_color \
+                ) \
+                if not self.disabled else \
+                self.theme_cls.onPrimaryColor[:-1] + [.38]
+        Point:
+            points: self._inactive_points
+            pointsize: self.step_point_size
+
+        # Points of the active track when a step is used.
+        Color:
+            rgba:
+                ( \
+                self.theme_cls.primaryColor \
+                if not self.track_inactive_step_point_color else \
+                self.track_inactive_step_point_color \
+                ) \
+                if not self.disabled else \
+                self.theme_cls.onSurfaceColor[:-1] + [.38]
+        Point:
+            points: self._active_points
+            pointsize: self.step_point_size
+
+    # Label container.
+    BoxLayout:
+        id: value_container
+        size_hint: None, None
+        size: self.minimum_size
+        pos:
+            handle_container.center_x - self.width / 2, \
+            root._value_container_y
+
+    # Handle container.
+    BoxLayout:
+        id: handle_container
+        size_hint: None, None
+        size: self.minimum_size
+        pos:
+            ( \
+            root.value_pos[0] - dp(0), \
+            root.center_y - self.height / 2 - root.track_active_width / 2 \
+            ) \
+            if root.orientation == "horizontal" else \
+            ( \
+            root.center_x - self.width / 2 - root.track_active_width / 2, \
+            root.value_pos[1] - root.track_active_width / 2 \
+            )
+
+
+<MDSliderHandle>
+    _state_layer: state_layer
+    size_hint: None, None
+    radius: self.radius
+
+    canvas:
+        Color:
+            rgba:
+                ( \
+                self.theme_cls.primaryColor \
+                if self.theme_bg_color == "Primary" else \
+                self.md_bg_color \
+                ) \
+                if not self.disabled else self.theme_cls.onSurfaceColor
+        SmoothRoundedRectangle:
+            radius: self.radius
+            size: self.size
+            pos: self.pos
+
+    MDSliderHandleStateLayer:
+        id: state_layer
+
+        canvas.before:
+            Color:
+                rgba:
+                    ( \
+                    app.theme_cls.primaryColor \
+                    if not root.state_layer_color else \
+                    root.state_layer_color \
+                    )[:-1] + [0.38]
+            SmoothRoundedRectangle:
+                radius: [root.state_layer_size[0] / 2, ]
+                size:  root.state_layer_size
+                pos:
+                    root.x - root.state_layer_size[0] / 4, \
+                    root.y - root.state_layer_size[1] / 4
+
+
+<MDSliderValueContainer>
+    canvas:
+        Color:
+            rgba: app.theme_cls.primaryColor
+        SmoothRoundedRectangle:
+            radius: [self.size[0] / 2, ]
+            pos: self.pos
+            size: self.size
+
+        SmoothTriangle:
+            points:
+                [ \
+                self.x + 18, self.y - 6, \
+                self.x + 32, self.y + 9, \
+                self.x + 5, self.y + 8 \
+                ]
+
+        # Label texture.
+        Color:
+            group: "md-slider-label-value-color"
+        Rectangle:
+            group: "md-slider-label-value-rect"
+            texture:
+                self._slider._value_label.texture \
+                if self._slider and self._slider._value_label else \
+                None
+            pos:
+                ( \
+                ( \
+                # X.
+                self._slider.value_pos[0] \
+                - (self._slider._value_label.texture_size[0] / 2) + dp(10), \
+                # Y.
+                self._slider.center_y + dp(28) \
+                ) \
+                if self._slider.orientation == "horizontal" else \
+                ( \
+                # X.
+                self._slider.center_x \
+                - (self._slider._value_label.texture_size[0] / 2) - dp(2), \
+                # Y.
+                self._slider.value_pos[1] + \
+                self._slider._value_label.texture_size[1] \
+                + self._slider._handle.state_layer_size[1] / 2, \
+                ) \
+                ) \
+                if self._slider and self._slider._value_label else (0, 0)
+            size:
+                self._slider._value_label.texture_size \
+                if self._slider and self._slider._value_label else (0, 0)
+
+    size_hint: None, None
+    size:
+        self._slider._value_label.size \
+        if self._slider and self._slider._value_label else \
+        (0, 0)
+
+
+<MDSliderValueLabel>
+    font_style: "Label"
+    role: "medium"
+    size_hint: None, None
+    theme_text_color: "Custom"
+    text_color: self.theme_cls.onPrimaryColor
+    halign: "center"

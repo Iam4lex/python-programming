@@ -1,0 +1,37 @@
+<MDSmartTile>
+
+
+<MDSmartTileImage>
+    size_hint_y:
+        (1 if self._smart_tile.overlap else None) \
+        if self._smart_tile else None
+    height:
+        ( \
+        self._smart_tile.height \
+        if self._smart_tile.overlap else \
+        self._smart_tile.height - (self._overlay_container.height if self._overlay_container else 0) \
+        ) \
+        if self._smart_tile else 0
+    pos:
+        ( \
+        ( \
+        (0, 0) \
+        if self._smart_tile.overlap else \
+        (0, (self._overlay_container.height if self._overlay_container else 0)) \
+        ) \
+        if self._smart_tile.overlay_mode == "footer" else \
+        (0, 0) \
+        ) \
+        if self._smart_tile else (0, 0)
+    on_release: self._smart_tile.dispatch("on_release")
+    on_press: self._smart_tile.dispatch("on_press")
+
+
+<MDSmartTileOverlayContainer>
+    pos:
+        ( \
+        (0, 0) \
+        if self._smart_tile.overlay_mode == "footer" else \
+        (0, self._smart_tile.height - self.height) \
+        ) \
+        if self._smart_tile else (0, 0)

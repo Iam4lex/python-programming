@@ -1,0 +1,391 @@
+<MDFabButton>
+    size_hint: None, None
+    text_size: self.size
+    halign: "center"
+    valign: "center"
+    size:
+        { \
+        "standard": ("56dp", "56dp"), \
+        "small": ("40dp", "40dp"), \
+        "large": ("96dp", "96dp"), \
+        }[self.style]
+    radius:
+        { \
+        "standard": [dp(16), ], \
+        "small": [dp(12), ], \
+        "large": [dp(28), ], \
+        }[self.style]
+    shadow_radius:
+        { \
+        "standard": [dp(14), ], \
+        "small": [dp(10), ], \
+        "large": [dp(26), ], \
+        }[self.style]
+    shadow_offset: 0, -1
+    elevation_level:
+        { \
+        "standard": 1, \
+        "small": 1, \
+        "large": 1, \
+        }[self.style]
+    shadow_color:
+        ( \
+        self.theme_cls.shadowColor[:-1] + [.5] \
+        if self.theme_shadow_color == "Primary" else \
+        self.shadow_color \
+        ) \
+        if not self.disabled else self.theme_cls.transparentColor
+    icon_color:
+        { \
+        "surface": self.theme_cls.onPrimaryContainerColor, \
+        "secondary": self.theme_cls.onSecondaryContainerColor, \
+        "tertiary": self.theme_cls.onTertiaryContainerColor \
+        }[self.color_map] \
+        if self.theme_icon_color == "Primary" else \
+        ( \
+        self.icon_color \
+        if self.icon_color else \
+        self.theme_cls.transparentColor \
+        )
+    disabled_color:
+        self.theme_cls.onSurfaceColor[:-1] + \
+        [self.fab_button_opacity_value_disabled_icon] \
+        if not self.icon_color_disabled else self.icon_color_disabled
+    theme_font_size: "Custom"
+    font_size:
+        { \
+        "standard": "24sp", \
+        "small": "24sp", \
+        "large": "36sp", \
+        }[root.style]
+
+    canvas.before:
+        Color:
+            rgba:
+                { \
+                "surface": self.theme_cls.surfaceColor, \
+                "secondary": self.theme_cls.secondaryColor, \
+                "tertiary": self.theme_cls.tertiaryColor \
+                }[self.color_map] \
+                if self.theme_bg_color == "Primary" else \
+                self.md_bg_color
+        SmoothRoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: self.radius
+
+
+<MDExtendedFabButtonIcon>
+    x: "16dp"
+    icon_color:
+        ( \
+        { \
+        "surface": self.theme_cls.onPrimaryContainerColor, \
+        "secondary": self.theme_cls.onSecondaryContainerColor, \
+        "tertiary": self.theme_cls.onTertiaryContainerColor \
+        }[self.parent.color_map] \
+        if self.theme_icon_color == "Primary" else \
+        ( \
+        self.icon_color \
+        if self.icon_color else self.theme_cls.transparentColor \
+        ) \
+        ) \
+        if self.parent else self.theme_cls.transparentColor
+    disabled_color:
+        self.theme_cls.onSurfaceColor[:-1] + \
+        [self.fab_button_opacity_value_disabled_icon] \
+        if not self.icon_color_disabled else self.icon_color_disabled
+    pos_hint: {"center_y": .5}
+
+
+<MDExtendedFabButtonText>
+    adaptive_width: True
+    text_color:
+        ( \
+        { \
+        "surface": self.theme_cls.onPrimaryContainerColor, \
+        "secondary": self.theme_cls.onSecondaryContainerColor, \
+        "tertiary": self.theme_cls.onTertiaryContainerColor \
+        }[self.parent.color_map] \
+        if self.theme_text_color == "Primary" else self.text_color \
+        ) \
+        if self.parent else self.text_color
+    disabled_color:
+        ( \
+        self.theme_cls.onSurfaceColor[:-1] + \
+        [self.fab_button_opacity_value_disabled_icon] \
+        if not self.parent.icon_color_disabled else \
+        self.parent.icon_color_disabled \
+        ) \
+        if self.parent else self.theme_cls.transparentColor
+    pos_hint: {"center_y": .5}
+
+
+<MDExtendedFabButton>
+    size_hint: None, None
+    size: "56dp", "56dp"
+    radius: [dp(16), ]
+    shadow_radius: [dp(14), ]
+    shadow_offset: 0, -1
+    # shadow_softness: 2
+    elevation_level: 1
+    shadow_color:
+        ( \
+        self.theme_cls.shadowColor \
+        if self.theme_shadow_color == "Primary" else \
+        self.shadow_color \
+        ) \
+        if not self.disabled else self.theme_cls.transparentColor
+    theme_font_size: "Custom"
+    font_size: "24sp"
+
+    canvas.before:
+        Color:
+            rgba:
+                { \
+                "standard": self.theme_cls.surfaceContainerColor \
+                if self.color_map == "surface" else \
+                { \
+                "secondary": self.theme_cls.secondaryContainerColor, \
+                "tertiary": self.theme_cls.tertiaryContainerColor \
+                }[self.color_map], \
+                "small": self.theme_cls.surfaceContainerHighColor \
+                if self.color_map == "surface" else \
+                { \
+                "secondary": self.theme_cls.secondaryContainerColor, \
+                "tertiary": self.theme_cls.tertiaryColor \
+                }[self.color_map], \
+                "large": self.theme_cls.surfaceContainerColor \
+                if self.color_map == "surface" else \
+                { \
+                "secondary": self.theme_cls.secondaryContainerColor, \
+                "tertiary": self.theme_cls.tertiaryColor \
+                }[self.color_map], \
+                }[self.style] \
+                if self.theme_bg_color == "Primary" else \
+                self.md_bg_color
+        SmoothRoundedRectangle:
+            size: self.size
+            pos: 0, 0
+            radius: self.radius
+
+
+<MDIconButton>
+    canvas.before:
+        Color:
+            group: "md-icon-button-bg-color"
+            rgba:
+                ( \
+                { \
+                "standard": self.theme_cls.transparentColor, \
+                "outlined": self.theme_cls.transparentColor, \
+                "tonal": self.theme_cls.secondaryContainerColor, \
+                "filled": self.theme_cls.primaryColor, \
+                }[self.style] \
+                if self.theme_bg_color == "Primary" else \
+                self.md_bg_color \
+                ) \
+                if not self.disabled else \
+                ( \
+                ( \
+                { \
+                "standard": self.theme_cls.transparentColor, \
+                "outlined": self.theme_cls.transparentColor, \
+                "tonal": self.theme_cls.onSurfaceColor[:-1] \
+                + [self.icon_button_tonal_opacity_value_disabled_container], \
+                "filled": self.theme_cls.onSurfaceColor[:-1] \
+                + [self.icon_button_filled_opacity_value_disabled_container], \
+                }[self.style] \
+                ) \
+                if not self.md_bg_color_disabled else self.md_bg_color_disabled \
+                )
+        SmoothRoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: self.radius
+
+    radius: [self.height / 2,]
+    halign: "center"
+    valign: "center"
+    size_hint: None, None
+    size: dp(40), dp(40)
+    text_size: self.size
+    line_color:
+        ( \
+        ( \
+        self.theme_cls.outlineColor \
+        if self.theme_line_color == "Primary" else \
+        ( \
+        self._line_color \
+        if self._line_color else \
+        self.line_color \
+        ) \
+        ) \
+        if not self.disabled else \
+        self.theme_cls.onSurfaceColor[:-1] + \
+        [self.icon_button_outlined_opacity_value_disabled_line] \
+        ) \
+        if self.style == "outlined" else self.theme_cls.transparentColor
+    icon_color:
+        ( \
+        { \
+        "standard": self.theme_cls.primaryColor, \
+        "tonal": self.theme_cls.onSecondaryContainerColor, \
+        "filled": self.theme_cls.onPrimaryColor, \
+        "outlined": self.theme_cls.onSurfaceVariantColor, \
+        }[self.style] \
+        if self.theme_icon_color == "Primary" else \
+        ( \
+        self.icon_color \
+        if self.icon_color else self.theme_cls.transparentColor \
+        ) \
+        )
+    disabled_color:
+        { \
+        "standard": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.icon_button_standard_opacity_value_disabled_icon], \
+        "tonal": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.icon_button_tonal_opacity_value_disabled_icon], \
+        "filled": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.icon_button_filled_opacity_value_disabled_icon], \
+        "outlined": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.icon_button_outlined_opacity_value_disabled_icon], \
+        }[self.style] \
+        if not self.icon_color_disabled else self.icon_color_disabled
+
+
+<MDButton>
+    md_bg_color:
+        { \
+        "elevated": self.theme_cls.surfaceContainerLowColor, \
+        "filled": self.theme_cls.primaryColor, \
+        "tonal": self.theme_cls.secondaryContainerColor, \
+        "outlined": self.theme_cls.transparentColor, \
+        "text": self.theme_cls.transparentColor, \
+        }[self.style] \
+        if self.theme_bg_color == "Primary" else self.md_bg_color
+    line_color:
+        ( \
+        ( \
+        self.theme_cls.outlineColor \
+        if not self.disabled else \
+        self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_outlined_opacity_value_disabled_line] \
+        ) \
+        if self.style == "outlined" else \
+        self.theme_cls.transparentColor \
+        ) \
+        if self.theme_line_color == "Primary" else self.line_color
+    size_hint_x: None if self.theme_width == "Primary" else self.size_hint_x
+    size_hint_y: None if self.theme_height == "Primary" else self.size_hint_y
+    height: "40dp"
+    elevation: self.elevation_levels[self.elevation_level]
+    shadow_color:
+        ( \
+        ( \
+        self.theme_cls.shadowColor[:-1] + [.5] \
+        if self.theme_shadow_color == "Primary" else \
+        self.shadow_color \
+        ) \
+        if self.style not in ["outlined", "text"] else \
+        self.theme_cls.transparentColor \
+        ) \
+        if not self.disabled else self.theme_cls.transparentColor
+    shadow_radius: self.radius
+    elevation_level:
+        { \
+        "elevated": 1, \
+        "filled": 0, \
+        "tonal": 0, \
+        "outlined": 0, \
+        "text": 0, \
+        }[self.style]
+    shadow_offset: [0, -1] if self.style == "elevated" else [0, 0]
+
+
+<MDButtonText>
+    adaptive_size: True
+    pos_hint: {"center_y": .5}
+    font_style: "Label"
+    role: "large"
+    markup: True
+    disabled: self._button.disabled if self._button else False
+    text_color:
+        ( \
+        ( \
+        ( \
+        { \
+        "elevated": self.theme_cls.primaryColor, \
+        "filled": self.theme_cls.onPrimaryColor, \
+        "tonal": self.theme_cls.onSecondaryContainerColor, \
+        "outlined": self.theme_cls.primaryColor, \
+        "text": self.theme_cls.primaryColor, \
+        }[self._button.style] \
+        ) \
+        if self._button else self.theme_cls.transparentColor \
+        ) \
+        if self.theme_text_color == "Primary" else self.text_color \
+        )
+    disabled_color:
+        ( \
+        { \
+        "elevated": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_elevated_opacity_value_disabled_text], \
+        "filled": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_filled_opacity_value_disabled_text], \
+        "tonal": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_tonal_opacity_value_disabled_text], \
+        "outlined": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_outlined_opacity_value_disabled_text], \
+        "text": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_text_opacity_value_disabled_text], \
+        }[self._button.style] \
+        ) \
+        if self._button else self.theme_cls.transparentColor
+
+
+<MDButtonIcon>
+    size_hint: None, None
+    size: "18dp", "18dp"
+    theme_font_size: "Custom"
+    font_size: "20sp"
+    x: "16dp"
+    pos_hint: {"center_y": .5}
+    icon_color:
+        ( \
+        ( \
+        ( \
+        { \
+        "elevated": self.theme_cls.primaryColor, \
+        "filled": self.theme_cls.onPrimaryColor, \
+        "tonal": self.theme_cls.onSecondaryContainerColor, \
+        "outlined": self.theme_cls.primaryColor, \
+        "text": self.theme_cls.primaryColor, \
+        }[self._button.style] \
+        ) \
+        if self._button else self.theme_cls.transparentColor \
+        ) \
+        if self.theme_icon_color == "Primary" else \
+        ( \
+        self.icon_color \
+        if self.icon_color else \
+        self.theme_cls.transparentColor \
+        ) \
+        )
+    disabled_color:
+        ( \
+        { \
+        "elevated": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_elevated_opacity_value_disabled_icon], \
+        "filled": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_filled_opacity_value_disabled_icon], \
+        "tonal": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_tonal_opacity_value_disabled_icon], \
+        "outlined": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_outlined_opacity_value_disabled_icon], \
+        "text": self.theme_cls.onSurfaceColor[:-1] + \
+        [self.button_text_opacity_value_disabled_icon], \
+        }[self._button.style] \
+        if not self.icon_color_disabled else self.icon_color_disabled \
+        ) \
+        if self._button else self.theme_cls.transparentColor
