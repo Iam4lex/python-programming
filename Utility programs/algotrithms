@@ -1,0 +1,6 @@
+
+num = 10
+
+sum1 = (num*(num+1))/2
+
+print(sum1)
