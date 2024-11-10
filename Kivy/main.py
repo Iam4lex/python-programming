@@ -50,7 +50,7 @@ class Demo(MDApp):
             on_release=self.show_values
         )
 
-        # Add widgets in the box layout
+        # Add widgets in the box layout 
         box_layout.add_widget(label)
         box_layout.add_widget(self.username)
         box_layout.add_widget(self.password)
