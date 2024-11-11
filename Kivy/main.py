@@ -26,8 +26,6 @@ MDTextField:
     password: True
 """
 
-
-
 class Demo(MDApp):
 
     def build(self):
