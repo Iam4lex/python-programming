@@ -13,7 +13,7 @@ class DemoApp(MDApp):
         self.theme_cls.primary_palette = "Green"
 
         screen = Screen()
-
+ 
         # box_layout = MDBoxLayout(
         #     orientation = "vertical",
         #     spacing = 10,
